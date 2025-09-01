@@ -1,0 +1,6 @@
+# Always use LF for Terraform files
+*.tf text eol=lf
+*.tfvars text eol=lf
+*.hcl text eol=lf
+*.sh text eol=lf
+*.md text eol=lf

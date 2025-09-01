@@ -1,15 +1,36 @@
+/*terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+
+  required_version = ">= 1.5.0"
+}*/
+
 provider "aws" {
-  region = "ap-south-1"
+  region = var.aws_region
 }
 
+# --------------------------
+# S3 Bucket
+# --------------------------
 resource "aws_s3_bucket" "demo" {
-  bucket = "my-demo-bucket-123456"
+  bucket = var.s3_bucket_name
+  tags = {
+    Name        = "DemoBucket"
+    Environment = "Dev"
+  }
 }
 
-resource "aws_instance" "demo_ec2" {
-  ami           = "ami-08e5424edfe926b43" # Amazon Linux 2023 (update as needed)
-  instance_type = "t2.micro"
+# --------------------------
+# EC2 Instance
+# --------------------------
+resource "aws_instance" "demo" {
+  ami           = var.ec2_ami
+  instance_type = var.ec2_instance_type
   tags = {
-    Name = "Terraform-Demo"
+    Name = "DemoEC2"
   }
 }
