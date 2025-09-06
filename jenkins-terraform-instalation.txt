@@ -29,3 +29,18 @@ terraform -v
 
 
 #I will set user:Purusottam password:Purusottam@01
+
+Step to Automate git push trigger
+Step 1
+Install GitHub plugin in Jenkins
+Go to Jenkins Dashboard → Manage Jenkins → Manage Plugins → Available--->Search for “GitHub” or “GitHub Integration Plugin”
+Install it and restart Jenkins if required
+
+step2
+Enable GitHub webhook trigger In the same job Configure → Build Triggers--->Check “GitHub hook trigger for GITScm polling”
+
+step3
+Configure webhook in GitHub--->Go to your GitHub repository → Settings → Webhooks → Add webhook
+Payload URL:http://<your-jenkins-server>/github-webhook/--->http://13.233.129.129:8080/github-webhook/
+Select: application/json
+Choose “Just the push event”
