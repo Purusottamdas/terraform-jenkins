@@ -1,0 +1,33 @@
+# Update system
+sudo dnf update -y
+
+# Install Java (needed for Jenkins)
+sudo dnf install java-17-amazon-corretto -y
+
+# Add Jenkins repo and install
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+sudo curl -o /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo dnf install jenkins -y
+
+# Enable and start Jenkins
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+
+# Install Git
+sudo dnf install git -y
+
+# Install unzip (needed for Terraform)
+sudo dnf install unzip -y
+
+# Install Terraform
+curl -fsSL https://releases.hashicorp.com/terraform/1.9.5/terraform_1.9.5_linux_amd64.zip -o terraform.zip
+sudo unzip terraform.zip -d /usr/local/bin/
+terraform -v
+
+
+
+
+#sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+
+#I will set user:Purusottam password:Purusottam@01
