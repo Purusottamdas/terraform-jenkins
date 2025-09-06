@@ -25,7 +25,7 @@ sudo unzip terraform.zip -d /usr/local/bin/
 terraform -v
 
 
-
+fbvcx
 
 #sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
