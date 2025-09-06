@@ -15,10 +15,10 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            steps {
+        /* steps {
                 git branch: 'main', url: 'https://github.com/Purusottamdas/terraform-jenkins.git'
             }
-        }
+        }*/
 
         stage('Terraform Init') {
             steps {
