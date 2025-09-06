@@ -24,9 +24,7 @@ curl -fsSL https://releases.hashicorp.com/terraform/1.9.5/terraform_1.9.5_linux_
 sudo unzip terraform.zip -d /usr/local/bin/
 terraform -v
 
-
-fbvcx
-
+#To retrive the initial password then login to jenkis through GUI te create te user.
 #sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 
